@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CalculatorService } from 'src/app/services/calculator.service';
 
 @Component({
   selector: 'app-display',
@@ -9,9 +10,10 @@ export class DisplayComponent implements OnInit {
 
   @Input() myDisplay: string;
 
-  constructor() { }
+  constructor(public service: CalculatorService) { }
 
   ngOnInit() {
+    this.myDisplay = this.service.display;
   }
 
 }

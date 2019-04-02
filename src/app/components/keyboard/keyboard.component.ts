@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CalculatorService } from 'src/app/services/calculator.service';
 enum State { init, firstFigure, secondFigure, result }
 
 @Component({
@@ -9,81 +10,62 @@ enum State { init, firstFigure, secondFigure, result }
 export class KeyboardComponent implements OnInit {
 
   @Output() signal = new EventEmitter<string>();
-  currentState = State.init;
 
-  display = '';
-
-  firstFigure = 0;
-  secondFigure = 0;
-  result = 0;
-  operator = '';
-
-  constructor() { }
+  constructor(public service: CalculatorService) { }
 
   ngOnInit() {
+
   }
 
   handleNumber(num: number) {
-    switch (this.currentState) {
+    switch (this.service.currentState) {
       case State.init:
-        this.firstFigure = num;
-        this.currentState = State.firstFigure;
-        this.display += num;
-        this.signal.emit(this.display);
+        this.service.firstFigure = num;
+        this.service.currentState = State.firstFigure;
+        this.service.display += num;
+        this.signal.emit(this.service.display);
         break;
       case State.firstFigure:
-        this.firstFigure = this.firstFigure * 10 + num;
-        this.display += num;
-        this.signal.emit(this.display);
+        this.service.firstFigure = this.service.firstFigure * 10 + num;
+        this.service.display += num;
+        this.signal.emit(this.service.display);
         break;
       case State.secondFigure:
-        this.secondFigure = this.secondFigure * 10 + num;
-        this.display += num;
-        this.signal.emit(this.display);
+        this.service.secondFigure = this.service.secondFigure * 10 + num;
+        this.service.display += num;
+        this.signal.emit(this.service.display);
         break;
       case State.result:
-        this.secondFigure = 0;
-        this.firstFigure = num;
-        this.operator = '';
-        this.result = 0;
-        this.display = String(num);
-        this.signal.emit(this.display);
-        this.currentState = State.firstFigure;
+        this.service.secondFigure = 0;
+        this.service.firstFigure = num;
+        this.service.operator = '';
+        this.service.result = 0;
+        this.service.display = String(num);
+        this.signal.emit(this.service.display);
+        this.service.currentState = State.firstFigure;
         break;
     }
   }
 
   handleSymbol(symbol: string) {
-    switch (this.currentState) {
+    switch (this.service.currentState) {
       case State.firstFigure:
         if (symbol !== '=' && symbol !== '.') {
-          this.operator = symbol;
-          this.currentState = State.secondFigure;
+          this.service.operator = symbol;
+          this.service.currentState = State.secondFigure;
         }
-        this.display += symbol;
-        this.signal.emit(this.display);
+        this.service.display += symbol;
+        this.signal.emit(this.service.display);
         break;
       case State.secondFigure:
         if (symbol === '=') {
-          this.result = this.resolve();
-          this.currentState = State.result;
-          this.display = this.display + symbol + this.result;
-          this.signal.emit(this.display);
+          this.service.result = this.service.resolve();
+          this.service.currentState = State.result;
+          this.service.display = this.service.display + symbol + this.service.result;
+          this.signal.emit(this.service.display);
         }
         break;
     }
   }
 
-  resolve() {
-    switch (this.operator) {
-      case '+':
-        return this.firstFigure + this.secondFigure;
-      case '-':
-        return this.firstFigure - this.secondFigure;
-      case '*':
-        return this.firstFigure * this.secondFigure;
-      case '/':
-        return this.firstFigure / this.secondFigure;
-    }
-  }
 }

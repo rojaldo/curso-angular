@@ -6,6 +6,7 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
 import { DisplayComponent } from './components/display/display.component';
 import { KeyboardComponent } from './components/keyboard/keyboard.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CalculatorService } from './services/calculator.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule, NgbModule
   ],
-  providers: [],
+  providers: [CalculatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
