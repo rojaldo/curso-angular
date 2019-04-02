@@ -7,15 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
   heroName: string = '';
-  heroes: string[] = ['Batman', 'Superman', 'Spiderman'];
+  heroDescription: string = '';
+  heroes: Hero[] = [{name: 'Batman', description: 'dark knight'},
+  {name: 'Superman', description: 'man of steel'},
+  {name: 'Spiderman', description: 'Spidy'}];
   constructor() { }
 
   ngOnInit() {
   }
 
   click() {
-    this.heroes.push(this.heroName);
+    this.heroes.push(new Hero(this.heroName, this.heroDescription));
     this.heroName = '';
+    this.heroDescription = '';
   }
 
+}
+
+class Hero {
+  constructor(public name: string, public description: string) {}
 }
