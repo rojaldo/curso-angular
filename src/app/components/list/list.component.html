@@ -1,6 +1,9 @@
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let hero of heroList">
+  <li class="list-group-item" *ngFor="let hero of heroList; let heroIndex=index">
     <b>{{hero.name}}</b>
     <p>{{hero.description}}</p>
+    <ngb-rating [(rate)]="hero.rating" [readonly]="true"></ngb-rating>
+    <br>
+    <button type="button" class="btn btn-danger" (click)="removeHero(heroIndex)">Remove hero</button>
   </li>
 </ul>

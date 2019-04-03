@@ -1,9 +1,10 @@
 <div class="form-group">
-    <label for="">Hero name</label>
-    <input [(ngModel)]="heroName" type="text" class="form-control" name="" id="" aria-describedby="helpId"
-      placeholder="">
-    <label for="">Hero Description</label>
-    <input [(ngModel)]="heroDescription" type="text" class="form-control" name="" id="" aria-describedby="helpId"
-      placeholder="">
-    <button type="button" (click)="click()" class="btn btn-primary" [disabled]="checkDisabled()">Add hero</button>
-  </div>
+  <label for="">Hero name</label>
+  <input [(ngModel)]="heroName" type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+  <label for="">Hero Description</label>
+  <input [(ngModel)]="heroDescription" type="text" class="form-control" name="" id="" aria-describedby="helpId"
+    placeholder="">
+  <ngb-rating [(rate)]="heroRating" style="font-size: 3rem;"></ngb-rating>
+  <br>
+  <button type="button" (click)="click()" class="btn btn-primary" [disabled]="checkDisabled()">Add hero</button>
+</div>

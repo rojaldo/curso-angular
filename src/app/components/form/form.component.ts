@@ -11,6 +11,7 @@ export class FormComponent implements OnInit {
   @Output() newHero = new EventEmitter<Hero>();
   heroName: string = '';
   heroDescription: string = '';
+  heroRating: number = 5;
 
   constructor() { }
 
@@ -18,9 +19,10 @@ export class FormComponent implements OnInit {
   }
 
   click() {
-    this.newHero.emit(new Hero(this.heroName, this.heroDescription));
+    this.newHero.emit(new Hero(this.heroName, this.heroDescription, this.heroRating));
     this.heroName = '';
     this.heroDescription = '';
+    this.heroRating = 5;
   }
 
   checkDisabled() {

@@ -9,8 +9,8 @@ import { Hero } from 'src/app/model/hero';
 export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [new Hero('Batman', 'dark knight'),
-  {name: 'Superman', description: 'man of steel'},
-  {name: 'Spiderman', description: 'Spidy'}];
+  new Hero('Superman', 'man of steel'),
+  new Hero('Spiderman', 'Spidy')];
   constructor() { }
 
   ngOnInit() {
