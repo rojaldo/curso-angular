@@ -13,6 +13,7 @@ import { ListComponent } from './components/list/list.component';
 import { FormComponent } from './components/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BeersComponent } from './components/beers/beers.component';
+import { AlcoholPipe } from './pipes/alcohol.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BeersComponent } from './components/beers/beers.component';
     ListComponent,
     FormComponent,
     BeersComponent,
+    AlcoholPipe,
   ],
   imports: [
     BrowserModule, NgbModule, FormsModule, HttpClientModule

@@ -1,4 +1,19 @@
-<p>
-  beers works!
-</p>
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of result">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{beer.name}}</h4>
+          <p>{{beer.abv | alcohol}}</p>
+          <div class="container-fluid text-center">
+            <img class="card-img-top" [src]="beer.image_url" alt="" style="width: 25%; margin: auto">
+          </div>
+          <p class="card-text">{{beer.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 <p>{{this.result | json}}</p>
