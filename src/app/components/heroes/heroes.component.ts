@@ -10,6 +10,7 @@ import { HeroesService } from 'src/app/services/heroes.service';
 export class HeroesComponent implements OnInit, OnDestroy {
 
   heroes: Hero[] = [];
+  checkedValue: boolean = true;
 
   constructor(private service: HeroesService) { }
 
@@ -19,6 +20,11 @@ export class HeroesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.service.heroes = this.heroes;
+  }
+
+  change(value: any) {
+    console.log('Change:' + value);
+    this.checkedValue = !this.checkedValue;
   }
 
   addHero(newHero: Hero) {
