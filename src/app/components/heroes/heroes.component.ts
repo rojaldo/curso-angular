@@ -7,8 +7,7 @@ import { Hero } from 'src/app/model/hero';
   styleUrls: ['./heroes.component.sass']
 })
 export class HeroesComponent implements OnInit {
-  heroName: string = '';
-  heroDescription: string = '';
+
   heroes: Hero[] = [new Hero('Batman', 'dark knight'),
   {name: 'Superman', description: 'man of steel'},
   {name: 'Spiderman', description: 'Spidy'}];
@@ -17,14 +16,8 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
   }
 
-  click() {
-    this.heroes.push(new Hero(this.heroName, this.heroDescription));
-    this.heroName = '';
-    this.heroDescription = '';
-  }
-
-  checkDisabled() {
-    return !(this.heroName !== '' && this.heroDescription !== '');
+  addHero(newHero: Hero) {
+    this.heroes.push(newHero);
   }
 
 }
