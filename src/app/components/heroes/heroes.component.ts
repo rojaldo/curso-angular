@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from 'src/app/model/hero';
 
 @Component({
   selector: 'app-heroes',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeroesComponent implements OnInit {
   heroName: string = '';
   heroDescription: string = '';
-  heroes: Hero[] = [{name: 'Batman', description: 'dark knight'},
+  heroes: Hero[] = [new Hero('Batman', 'dark knight'),
   {name: 'Superman', description: 'man of steel'},
   {name: 'Spiderman', description: 'Spidy'}];
   constructor() { }
@@ -22,8 +23,8 @@ export class HeroesComponent implements OnInit {
     this.heroDescription = '';
   }
 
-}
+  checkDisabled() {
+    return !(this.heroName !== '' && this.heroDescription !== '');
+  }
 
-class Hero {
-  constructor(public name: string, public description: string) {}
 }

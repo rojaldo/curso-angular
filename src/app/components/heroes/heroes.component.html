@@ -6,7 +6,7 @@
     <label for="">Hero Description</label>
     <input [(ngModel)]="heroDescription" type="text" class="form-control" name="" id="" aria-describedby="helpId"
       placeholder="">
-    <button type="button" (click)="click()" class="btn btn-primary">Add hero</button>
+    <button type="button" (click)="click()" class="btn btn-primary" [disabled]="checkDisabled()">Add hero</button>
   </div>
 
   <ul class="list-group">
