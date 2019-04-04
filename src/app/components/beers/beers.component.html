@@ -1,7 +1,9 @@
 <div class="container">
   <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChangeEnd)="handleRange(value, highValue)"></ng5-slider>
+  <button type="button" class="btn btn-primary" (click)="handleClick('abv')">Alcohol</button>
+  <button type="button" class="btn btn-primary" (click)="handleClick('name')">Name</button>
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of beers">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of result | range:value:highValue | orderBy: criteria ">
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">{{beer.name}}</h4>
