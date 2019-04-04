@@ -15,6 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BeersComponent } from './components/beers/beers.component';
 import { AlcoholPipe } from './pipes/alcohol.pipe';
 
+import { Ng5SliderModule } from 'ng5-slider';
+import {NgPipesModule} from 'ngx-pipes';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,9 @@ import { AlcoholPipe } from './pipes/alcohol.pipe';
     AlcoholPipe,
   ],
   imports: [
-    BrowserModule, NgbModule, FormsModule, HttpClientModule
+    BrowserModule, NgbModule,
+    FormsModule, HttpClientModule,
+    Ng5SliderModule, NgPipesModule
   ],
   providers: [CalculatorService],
   bootstrap: [AppComponent]

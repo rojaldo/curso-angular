@@ -8,7 +8,6 @@ export class AlcoholPipe implements PipeTransform {
   transform(value: any, ...args: any): any {
     let symbol = ',';
     let graduation = 'º';
-    console.log(args);
     if (typeof value === 'number') {
       if (args !== undefined) {
         switch (args[0]) {
@@ -21,7 +20,6 @@ export class AlcoholPipe implements PipeTransform {
           default:
             symbol = ',';
         }
-        console.log(args[1]);
         switch (args[1]) {
           case 'º':
             graduation = 'º';
