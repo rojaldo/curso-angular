@@ -26,6 +26,15 @@ export class BeersComponent implements OnInit {
     this.service.getRequest('https://api.punkapi.com/v2/beers').subscribe(data => this.processResult(data));
   }
 
+  handleRange(value: number, highValue: number) {
+    console.log('Range: ' + value + ' - ' + highValue);
+    this.beers = [];
+    for (const beer of this.result) {
+      if (beer.abv >= value && beer.abv <= highValue) {
+        this.beers.push(beer);
+      }
+    }
+  }
 
   handleClick(param: string) {
     this.criteria = param;
