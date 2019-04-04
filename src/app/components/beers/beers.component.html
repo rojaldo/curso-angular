@@ -5,7 +5,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">{{beer.name}}</h4>
-          <p>{{beer.abv | alcohol}}</p>
+          <p>{{beer.abv | alcohol: ',':'º' }}</p>
           <div class="container-fluid text-center">
             <img class="card-img-top" [src]="beer.image_url" alt="" style="width: 25%; margin: auto">
           </div>
