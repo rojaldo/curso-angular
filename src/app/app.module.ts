@@ -18,6 +18,7 @@ import { AlcoholPipe } from './pipes/alcohol.pipe';
 import { Ng5SliderModule } from 'ng5-slider';
 import {NgPipesModule} from 'ngx-pipes';
 import { RangePipe } from './pipes/range.pipe';
+import { ApodComponent } from './components/apod/apod.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { RangePipe } from './pipes/range.pipe';
     BeersComponent,
     AlcoholPipe,
     RangePipe,
+    ApodComponent,
   ],
   imports: [
     BrowserModule, NgbModule,

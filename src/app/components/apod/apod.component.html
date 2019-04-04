@@ -1,0 +1,27 @@
+<div class="container">
+  <div *ngIf="!responded">
+    Loading...
+  </div>
+  <div *ngIf="responded && !error">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3">{{myObservable | async}}</h1>
+        <p class="lead">{{result.date}}</p>
+        <hr class="my-2">
+        <img [src]="result.url" alt="" style="width: 100%">
+        <p>{{result.explanation}}</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" [href]="result.hdurl" role="button">Download HD image</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="responded && error">
+    <div class="alert alert-danger" role="alert">
+      <strong>{{errorContent.status}}: {{errorContent.url}}</strong>
+    </div>
+  </div>
+
+</div>
+
+<p>{{result | json}}</p>
