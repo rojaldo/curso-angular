@@ -5,7 +5,7 @@
   <div *ngIf="responded && !error">
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-3">{{myObservable | async}}</h1>
+        <h1 class="display-3">{{result.title}}</h1>
         <p class="lead">{{result.date}}</p>
         <hr class="my-2">
         <img [src]="result.url" alt="" style="width: 100%">
