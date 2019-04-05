@@ -21,6 +21,7 @@ import { RangePipe } from './pipes/range.pipe';
 import { ApodComponent } from './components/apod/apod.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { ShowApodComponent } from './components/show-apod/show-apod.component';
+import { FormValidationComponent } from './components/form-validation/form-validation.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ShowApodComponent } from './components/show-apod/show-apod.component';
     RangePipe,
     ApodComponent,
     ShowApodComponent,
+    FormValidationComponent,
   ],
   imports: [
     BrowserModule, NgbModule,
