@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RequestService {
 
-  readonly apodKey = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
+  readonly apodKey = 'DEMO_KEY';
   readonly apodBaseURL = 'https://api.nasa.gov/planetary/apod?api_key=';
 
 

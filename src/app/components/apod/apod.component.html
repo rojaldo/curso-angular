@@ -1,48 +1,11 @@
 <div class="container">
-  <div *ngIf="!responded">
-    Loading...
-  </div>
-  <div *ngIf="responded && !error">
-    <div class="container-fluid text-center m-4">
-      <ngb-datepicker #dp [(ngModel)]="selectedDate" (select)="getApiInfo(selectedDate)"></ngb-datepicker>
-    </div>
-    
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let apod of apodResults">
-        <div class="card">
-          <img class="card-img-top" [src]="apod.url" alt="">
-          <div class="card-body">
-            <h4 class="card-title">{{apod.title}}</h4>
-            <p class="card-text">{{apod.explanation}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-3">{{result.title}}</h1>
-        <p class="lead">{{result.date}}</p>
-        <hr class="my-2">
-        <img *ngIf="result.media_type === 'image'" [src]="result.url" alt="" style="width: 100%">
-        <div class="container-fluid text-center">
-          <youtube-player *ngIf="result.media_type === 'video'" [videoId]="getVideoID(result.url)" [playerVars]="playerVars">
-          </youtube-player>
-        </div>
-        <hr class="my-4">
-        <p>{{result.explanation}}</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" [href]="result.hdurl" role="button">Download HD image</a>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div *ngIf="responded && error">
-    <div class="alert alert-danger" role="alert">
-      <strong>{{errorContent.status}}: {{errorContent.url}}</strong>
-    </div>
+  <div class="container-fluid text-center m-4">
+    <ngb-datepicker #dp [(ngModel)]="selectedDate"></ngb-datepicker>
   </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+      <app-show-apod [date]="selectedDate"></app-show-apod>
+    </div>
+  </div>
 </div>
-
-<p>{{result | json}}</p>

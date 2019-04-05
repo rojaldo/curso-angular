@@ -20,6 +20,7 @@ import {NgPipesModule} from 'ngx-pipes';
 import { RangePipe } from './pipes/range.pipe';
 import { ApodComponent } from './components/apod/apod.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import { ShowApodComponent } from './components/show-apod/show-apod.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
     AlcoholPipe,
     RangePipe,
     ApodComponent,
+    ShowApodComponent,
   ],
   imports: [
     BrowserModule, NgbModule,

@@ -1,0 +1,7 @@
+<div class="card" *ngIf="apod">
+    <img class="card-img-top" [src]="apod.url" alt="">
+    <div class="card-body">
+      <h4 class="card-title">{{apod.title}}</h4>
+      <p class="card-text">{{apod.explanation}}</p>
+    </div>
+  </div>
