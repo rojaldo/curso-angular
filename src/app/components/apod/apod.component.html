@@ -1,11 +1,11 @@
 <div class="container">
   <div class="container-fluid text-center m-4">
-    <ngb-datepicker #dp [(ngModel)]="selectedDate"></ngb-datepicker>
+    <ngb-datepicker #dp [(ngModel)]="selectedDate" (select)="dates.splice(0,0,selectedDate)"></ngb-datepicker>
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-      <app-show-apod [date]="selectedDate"></app-show-apod>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let date of dates">
+      <app-show-apod [date]="date"></app-show-apod>
     </div>
   </div>
 </div>

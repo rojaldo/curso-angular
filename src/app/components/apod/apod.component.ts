@@ -10,6 +10,7 @@ import { Apod } from 'src/app/model/apod';
 export class ApodComponent implements OnInit {
 
   selectedDate: any;
+  dates: any[] = [];
 
   constructor() { }
 
