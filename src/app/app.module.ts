@@ -19,6 +19,7 @@ import { Ng5SliderModule } from 'ng5-slider';
 import {NgPipesModule} from 'ngx-pipes';
 import { RangePipe } from './pipes/range.pipe';
 import { ApodComponent } from './components/apod/apod.component';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ApodComponent } from './components/apod/apod.component';
   imports: [
     BrowserModule, NgbModule,
     FormsModule, HttpClientModule,
-    Ng5SliderModule, NgPipesModule
+    Ng5SliderModule, NgPipesModule,
+    NgxYoutubePlayerModule.forRoot()
   ],
   providers: [CalculatorService],
   bootstrap: [AppComponent]
