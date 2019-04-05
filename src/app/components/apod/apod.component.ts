@@ -9,17 +9,15 @@ import { RequestService } from 'src/app/services/request.service';
 export class ApodComponent implements OnInit {
 
   result: any = [];
+  selectedDate: any;
   responded = false;
   error = false;
   errorContent: any = {};
-  readonly key = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
-  readonly baseURL = 'https://api.nasa.gov/planetary/apod?api_key=';
 
   constructor(public service: RequestService) { }
 
   ngOnInit() {
-    this.service.getRequest(this.baseURL + this.key).subscribe(data => this.processResult(data),
-    error => this.processError(error));
+    this.getApiInfo();
   }
 
   processResult(data: any) {
@@ -33,6 +31,11 @@ export class ApodComponent implements OnInit {
     this.error = true;
     this.errorContent = error;
     this.responded = true;
+  }
+
+  getApiInfo(date?: any) {
+    this.service.getApodRequest(date).subscribe(data => this.processResult(data),
+    error => this.processError(error));
   }
 
 
