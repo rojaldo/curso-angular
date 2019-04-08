@@ -22,6 +22,7 @@ import { ApodComponent } from './components/apod/apod.component';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { ShowApodComponent } from './components/show-apod/show-apod.component';
 import { FormValidationComponent } from './components/form-validation/form-validation.component';
+import { CountriesComponent } from './components/countries/countries.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { FormValidationComponent } from './components/form-validation/form-valid
     ApodComponent,
     ShowApodComponent,
     FormValidationComponent,
+    CountriesComponent,
   ],
   imports: [
     BrowserModule, NgbModule,
