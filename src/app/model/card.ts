@@ -5,6 +5,7 @@ export class Card {
     difficulty = '';
     answers: string[] = [];
     responded = false;
+    respondedIndex = -1;
     constructor(json: any) {
         this.question = json.question;
         this.correctAnswer = json.correct_answer;

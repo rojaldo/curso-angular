@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
       <h4 class="card-title">{{card.question}}</h4>
-      <button [disabled]="card.responded" type="button" name="" id="" [ngClass]="getClass()" *ngFor="let answer of card.answers; let buttonIndex=index" (click)="handleClick(buttonIndex)">{{answer}}</button>
+      <button [disabled]="card.responded" type="button" name="" id="" [ngClass]="getClass(buttonIndex)" *ngFor="let answer of card.answers; let buttonIndex=index" (click)="handleClick(buttonIndex)">{{answer}}</button>
     </div>
   </div>
