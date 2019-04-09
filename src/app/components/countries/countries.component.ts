@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
 import { Observable } from 'rxjs';
-import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 
 @Component({
@@ -32,6 +32,13 @@ export class CountriesComponent implements OnInit {
 
   ngOnInit() {
     this.service.getRequest('https://restcountries.eu/rest/v2/all').subscribe((data) => this.processRequest(data));
+  }
+
+  handleKey(event: any) {
+    const index = this.result.findIndex(x => x.name === event.target.value);
+    this.latitude = this.result[index].latlng[0];
+    this.longitude = this.result[index].latlng[1];
+    console.log(event.target.value + ': ' + index + ' | coord: ' + this.latitude + ',' + this.longitude);
   }
 
   processRequest(data: any) {

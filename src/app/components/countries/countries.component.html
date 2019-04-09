@@ -5,11 +5,11 @@
 <div *ngIf="responded">
   <br>
   <label for="typeahead-basic">Search for a state:</label>
-  <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+  <input id="typeahead-basic" (keyup.enter)="handleKey($event)" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
   <hr>
 
   <!-- A second map -->
-  <app-map id="map1" [lon]=longitude [lat]=latitude zoom=13>
+  <app-map id="map1" [lon]=longitude [lat]=latitude zoom=3>
     <!-- Add a layer watercolor -->
     <app-layer layer="watercolor"></app-layer>
     <!-- Add a layer labels -->

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 
 import OlMap from 'ol/Map';
@@ -23,7 +23,7 @@ import { MapidService } from './mapid.service';
   providers: [MapidService]
 })
 
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnChanges {
 
   /** Map id
    */
@@ -50,7 +50,12 @@ export class MapComponent implements OnInit {
     private mapService: MapService,
     private mapidService: MapidService,
     private elementRef: ElementRef
-  ) {}
+  ) { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.map.getView().setCenter(fromLonLat([parseFloat(this.lon) || 0, parseFloat(this.lat) || 0]));
+    this.map.getView().setZoom(this.zoom);
+  }
 
   /**
    * Create map on Init
