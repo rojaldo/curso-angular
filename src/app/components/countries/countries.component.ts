@@ -13,6 +13,8 @@ export class CountriesComponent implements OnInit {
 
   result: any = [];
   responded: boolean = false;
+  longitude = 2.4246;
+  latitude = 48.845;
 
   countries: string[] = [];
 

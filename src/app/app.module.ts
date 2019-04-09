@@ -23,8 +23,7 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 import { ShowApodComponent } from './components/show-apod/show-apod.component';
 import { FormValidationComponent } from './components/form-validation/form-validation.component';
 import { CountriesComponent } from './components/countries/countries.component';
-
-
+import { MapModule } from './map/map.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +42,7 @@ import { CountriesComponent } from './components/countries/countries.component';
     CountriesComponent,
   ],
   imports: [
+    MapModule,
     BrowserModule, NgbModule,
     FormsModule, HttpClientModule,
     Ng5SliderModule, NgPipesModule,
