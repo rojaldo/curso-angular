@@ -24,6 +24,8 @@ import { ShowApodComponent } from './components/show-apod/show-apod.component';
 import { FormValidationComponent } from './components/form-validation/form-validation.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { MapModule } from './map/map.module';
+import { TrivialComponent } from './components/trivial/trivial.component';
+import { TrivialCardComponent } from './components/trivial-card/trivial-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { MapModule } from './map/map.module';
     ShowApodComponent,
     FormValidationComponent,
     CountriesComponent,
+    TrivialComponent,
+    TrivialCardComponent,
   ],
   imports: [
     MapModule,

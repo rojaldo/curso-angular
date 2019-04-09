@@ -1,12 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <ngb-tabset type="tabs">
-  <ngb-tab title="Countrie">
+  <ngb-tab title="Trivial">
+    <ng-template ngbTabContent>
+      <app-trivial></app-trivial>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab title="Countries">
     <ng-template ngbTabContent>
       <app-countries></app-countries>
     </ng-template>
   </ngb-tab>
-
   <ngb-tab title="Form validation">
     <ng-template ngbTabContent>
       <app-form-validation></app-form-validation>

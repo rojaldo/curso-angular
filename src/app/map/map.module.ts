@@ -7,6 +7,7 @@ import { LayerComponent } from './layer/layer.component';
 import { ControlComponent } from './control/control.component';
 import { MousePositionComponent } from './control/mouse-position.component';
 import { InteractionComponent } from './interaction/interaction.component';
+import { MapidService } from './mapid.service';
 
 @NgModule({
   declarations: [
