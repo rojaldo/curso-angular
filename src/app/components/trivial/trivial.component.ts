@@ -12,6 +12,7 @@ export class TrivialComponent implements OnInit {
   result: any = {};
   cards: Card[] = [];
   responded = false;
+  score = 0;
 
   constructor(public service: RequestService) { }
 
@@ -26,6 +27,10 @@ export class TrivialComponent implements OnInit {
     }
 
     this.responded = true;
+  }
+
+  handleSignal(points: number) {
+    this.score += points;
   }
 
 }

@@ -13,5 +13,19 @@ export class Card {
         this.answers.push(this.correctAnswer);
         this.category = json.category;
         this.difficulty = json.difficulty;
+        this.answers = this.shuffle(this.answers);
+    }
+
+    shuffle(a) {
+        let j: number;
+        let x: number;
+        let i: number;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
     }
 }

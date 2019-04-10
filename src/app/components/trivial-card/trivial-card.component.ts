@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Card } from 'src/app/model/card';
 
 @Component({
@@ -9,6 +9,7 @@ import { Card } from 'src/app/model/card';
 export class TrivialCardComponent implements OnInit {
 
   @Input() card: Card;
+  @Output() signal = new EventEmitter<number>();
 
   constructor() { }
 
@@ -18,6 +19,11 @@ export class TrivialCardComponent implements OnInit {
   handleClick(buttonIndex: number) {
     this.card.responded = true;
     this.card.respondedIndex = buttonIndex;
+    if (this.card.answers[this.card.respondedIndex] === this.card.correctAnswer) {
+      this.signal.emit(2);
+    } else {
+      this.signal.emit(-1);
+    }
   }
   getClass(index: number): any {
     const success = this.card.answers[index] === this.card.correctAnswer;
