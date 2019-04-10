@@ -26,6 +26,17 @@ import { CountriesComponent } from './components/countries/countries.component';
 import { MapModule } from './map/map.module';
 import { TrivialComponent } from './components/trivial/trivial.component';
 import { TrivialCardComponent } from './components/trivial-card/trivial-card.component';
+import {UIRouterModule} from '@uirouter/angular';
+
+const trivialState = { name: 'trivial', url: '/trivial',  component: TrivialComponent };
+const countriesState = { name: 'countries', url: '/countries',  component: CountriesComponent };
+const validatorState = { name: 'validator', url: '/countries',  component: FormValidationComponent };
+const apodState = { name: 'apod', url: '/countries',  component: ApodComponent };
+const beersState = { name: 'beers', url: '/countries',  component: BeersComponent };
+const heroesState = { name: 'heroes', url: '/countries',  component: HeroesComponent };
+const calculatorState = { name: 'calculator', url: '/countries',  component: CalculatorComponent };
+const STATE_ARRAY = [ trivialState, countriesState, validatorState, apodState, beersState, heroesState, calculatorState];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +58,7 @@ import { TrivialCardComponent } from './components/trivial-card/trivial-card.com
   ],
   imports: [
     MapModule,
+    UIRouterModule.forRoot({ states: STATE_ARRAY, useHash: true }),
     BrowserModule, NgbModule,
     FormsModule, HttpClientModule,
     Ng5SliderModule, NgPipesModule,

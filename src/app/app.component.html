@@ -1,40 +1,35 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" uiSref="trivial" uiSrefActive="active">Trivial <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" uiSref="countries">Countries </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" uiSref="validator">Form validation </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" uiSref="apod">Apod </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" uiSref="beers">Beers </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" uiSref="heroes">Heroes List </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" uiSref="calculator">Calculator </a>
+      </li>
+    </ul>
 
-<ngb-tabset type="tabs">
-  <ngb-tab title="Trivial">
-    <ng-template ngbTabContent>
-      <app-trivial></app-trivial>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Countries">
-    <ng-template ngbTabContent>
-      <app-countries></app-countries>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Form validation">
-    <ng-template ngbTabContent>
-      <app-form-validation></app-form-validation>
-    </ng-template>
-  </ngb-tab>
-
-  <ngb-tab title="Apod">
-    <ng-template ngbTabContent>
-      <app-apod></app-apod>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Beers">
-    <ng-template ngbTabContent>
-      <app-beers></app-beers>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Hero list">
-    <ng-template ngbTabContent>
-      <app-heroes></app-heroes>
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab title="Calculator">
-    <ng-template ngbTabContent>
-      <app-calculator></app-calculator>
-    </ng-template>
-  </ngb-tab>
-</ngb-tabset>
+  </div>
+</nav>
+<ui-view></ui-view>

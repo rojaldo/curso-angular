@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
+    "@uirouter/angular": "^3.0.0",
     "angular-osm": "^1.2.2",
     "core-js": "^2.5.4",
     "ng5-slider": "^1.1.13",
