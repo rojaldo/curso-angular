@@ -27,6 +27,8 @@ import { MapModule } from './map/map.module';
 import { TrivialComponent } from './components/trivial/trivial.component';
 import { TrivialCardComponent } from './components/trivial-card/trivial-card.component';
 import {UIRouterModule} from '@uirouter/angular';
+import { RequestService } from './services/request.service';
+import { HeroesService } from './services/heroes.service';
 
 const trivialState = { name: 'trivial', url: '/trivial',  component: TrivialComponent };
 const countriesState = { name: 'countries', url: '/countries',  component: CountriesComponent };
@@ -64,7 +66,7 @@ const STATE_ARRAY = [ trivialState, countriesState, validatorState, apodState, b
     Ng5SliderModule, NgPipesModule,
     NgxYoutubePlayerModule.forRoot()
   ],
-  providers: [CalculatorService],
+  providers: [CalculatorService, RequestService, HeroesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
